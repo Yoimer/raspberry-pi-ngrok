@@ -77,16 +77,16 @@ while (True):
 
                     ''' Block to send the email with the actual ngrok public IP '''
 
-                    fromaddr = "a@gmail.com"                                   # Sender email                        
-                    toaddr = "b@gmail.com"                                     # Reciever email 
+                    fromaddr = "yoimerupwork@gmail.com"                                   # Sender email                        
+                    toaddr = "ydrf19@gmail.com"                                     # Reciever email 
                     msg = MIMEMultipart()                                      # Subject Line, From and To specs
                     msg['From'] = fromaddr
                     msg['To'] = toaddr
-                    msg['Subject'] = "Location - Your actual IP Address is"       
+                    msg['Subject'] = "Mohamed's Raspberry Pi IP is: "
                     msg.attach(MIMEText(emailmsg, 'plain'))                 # Type of message .This one is a plane and pure text.
                     server = smtplib.SMTP('smtp.gmail.com', 587)            # SMTP Email settings. In this case is GMAIL.
                     server.starttls()                                       # Security setting for the email account
-                    server.login(fromaddr, "Passwd")                        # Password of the sender email
+                    server.login(fromaddr, "mohamed29*")                        # Password of the sender email
                     text = msg.as_string()                                  # Setting the msg variable as a string
                     server.sendmail(fromaddr, toaddr, text)                 # Sending email 
                     server.quit()
